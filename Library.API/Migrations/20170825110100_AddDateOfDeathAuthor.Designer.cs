@@ -11,9 +11,10 @@ using System;
 namespace Library.API.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    partial class LibraryContextModelSnapshot : ModelSnapshot
+    [Migration("20170825110100_AddDateOfDeathAuthor")]
+    partial class AddDateOfDeathAuthor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,7 +28,7 @@ namespace Library.API.Migrations
 
                     b.Property<DateTimeOffset>("DateOfBirth");
 
-                    b.Property<DateTimeOffset?>("DateOfDeath");
+                    b.Property<DateTimeOffset>("DateOfDeath");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
